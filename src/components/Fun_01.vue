@@ -11,7 +11,7 @@
     <button @click="handleClickPatch1"> patch count +10</button>
     <button @click="handleState">替换state</button>
     <button @click="resetState">重置store</button>
-
+    <h1> 两个count的和: {{ store.sumCount }} | {{ sumCount }} </h1>
   </div>
 </template>
 
@@ -30,8 +30,8 @@ function handleClick() {
 // 解构 store， 这样是非响应式的。其值会一直位置我们取出的值
 // let {g_count} = store
 
-// 结构 store ，这样是响应式的。
-let {g_obj} = storeToRefs(store)
+// 结构 store ，这样是响应式的。结构使用也是可以的
+let {g_obj, sumCount} = storeToRefs(store)
 
 // 对于响应式的结构，可以使用 x.value 的形式获取其值。这样就可以响应式的修改
 function handleClick1() {
@@ -97,6 +97,7 @@ store.$subscribe((mutation, state) => {
   console.log('mutation： ', mutation)
   console.log('state: ', state)
 })
+
 </script>
 
 <style scoped>

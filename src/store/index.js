@@ -11,5 +11,11 @@ export default defineStore('main', {
         count: 10,
       }
     }
+  },
+  // 使用getter可以做计算属性
+  getters: {
+    sumCount: state => {
+      return state.g_count + state.g_obj.count
+    }
   }
 })

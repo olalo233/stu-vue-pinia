@@ -35,3 +35,5 @@ npm install pinia
 ### 重置 store
 
 ### 监听状态变化
+
+### 计算属性
