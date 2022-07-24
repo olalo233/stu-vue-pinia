@@ -8,6 +8,7 @@
     <!--  引入结构出的值，看响应式和非响应式的写法  -->
     <h1>响应式取值{{ g_obj.count }}</h1>
     <button @click="handleClick1">count++</button>
+    <button @click="handleClickPatch1"> patch count +10</button>
   </div>
 </template>
 
@@ -41,7 +42,15 @@ function handleClick1() {
 // 直接修改 state, 使用 $patch。 这样可以方便的在同一次渲染中修改多个值
 function handleClickPatch() {
   store.$patch({
-    g_count: store.g_count + 3
+    g_count: store.g_count + 5
+  })
+}
+
+// 使用回调函数修改 store
+function handleClickPatch1() {
+  store.$patch((state) => {
+    state.g_count += 10
+    state.g_obj.count += 10
   })
 }
 </script>

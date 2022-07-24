@@ -27,3 +27,5 @@ npm install pinia
 ### 响应式解构 store 对值的操作
 
 ### 使用 $patch 修改store
+
+### $patch 中使用回调函数的方法操作
