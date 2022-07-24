@@ -9,6 +9,7 @@
     <h1>响应式取值{{ g_obj.count }}</h1>
     <button @click="handleClick1">count++</button>
     <button @click="handleClickPatch1"> patch count +10</button>
+    <button @click="handleState">替换state</button>
   </div>
 </template>
 
@@ -52,6 +53,14 @@ function handleClickPatch1() {
     state.g_count += 10
     state.g_obj.count += 10
   })
+}
+
+// 替换 state
+function handleState() {
+  store.$state = {
+    g_count: 100,
+    g_obj: {count: 100},
+  }
 }
 </script>
 

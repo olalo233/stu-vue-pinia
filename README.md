@@ -29,3 +29,5 @@ npm install pinia
 ### 使用 $patch 修改store
 
 ### $patch 中使用回调函数的方法操作
+
+### 替换 store 中的 state
