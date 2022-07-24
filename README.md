@@ -21,3 +21,5 @@ npm install pinia
 ### store引用
 
 ### 非响应式结构 store
+
+### 响应式取值
