@@ -12,7 +12,7 @@ npm install;
 npm run dev;
 ```
 
-### 添加store
+### 添加store并取值
 
 ```bash
 npm install pinia
