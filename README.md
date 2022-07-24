@@ -2,15 +2,15 @@
 
 ## 简介
 
-## 创建
-
-### 创建项目
+## 创建项目
 
 ```bash
 npx create vite vue-01 --template vue;
 npm install;
 npm run dev;
 ```
+
+## store
 
 ### 添加store并取值
 
