@@ -5,7 +5,8 @@
     <!--  修改store中的值，这样是响应式的，修改了值上面的h1中也会同步修改。  -->
     <button @click="handleClick">count++</button>
     <!--  引入结构出的值，看响应式和非响应式的写法  -->
-    <h1>响应式取值{{ g_count }}</h1>
+    <h1>响应式取值{{ g_obj.count }}</h1>
+    <button @click="handleClick1">count++</button>
   </div>
 </template>
 
@@ -25,7 +26,16 @@ function handleClick() {
 // let {g_count} = store
 
 // 结构 store ，这样是响应式的。
-let {g_count} = storeToRefs(store)
+let {g_obj} = storeToRefs(store)
+
+// 对于响应式的结构，可以使用 x.value 的形式获取其值。这样就可以响应式的修改
+function handleClick1() {
+  if (g_obj.value.count > 15) {
+    g_obj.value = {count: 10}
+    return
+  }
+  g_obj.value.count++
+}
 </script>
 
 <style scoped>

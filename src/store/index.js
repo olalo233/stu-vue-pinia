@@ -7,6 +7,9 @@ export default defineStore('main', {
     // 导出一个属性
     return {
       g_count: 10,
+      g_obj: {
+        count: 10,
+      }
     }
   }
 })
