@@ -31,3 +31,5 @@ npm install pinia
 ### $patch 中使用回调函数的方法操作
 
 ### 替换 store 中的 state
+
+### 重置 store

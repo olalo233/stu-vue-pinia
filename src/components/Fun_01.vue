@@ -10,6 +10,8 @@
     <button @click="handleClick1">count++</button>
     <button @click="handleClickPatch1"> patch count +10</button>
     <button @click="handleState">替换state</button>
+    <button @click="resetState">重置store</button>
+
   </div>
 </template>
 
@@ -61,6 +63,11 @@ function handleState() {
     g_count: 100,
     g_obj: {count: 100},
   }
+}
+
+// 重置 state， 使用这个函数可以把 store 中的值设置成我们在 store中声明的值
+function resetState() {
+  store.$reset()
 }
 </script>
 
