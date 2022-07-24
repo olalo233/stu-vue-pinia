@@ -4,6 +4,7 @@
     <h1>store count : {{ store.g_count }}</h1>
     <!--  修改store中的值，这样是响应式的，修改了值上面的h1中也会同步修改。  -->
     <button @click="handleClick">count++</button>
+    <button @click="handleClickPatch"> patch count +5</button>
     <!--  引入结构出的值，看响应式和非响应式的写法  -->
     <h1>响应式取值{{ g_obj.count }}</h1>
     <button @click="handleClick1">count++</button>
@@ -35,6 +36,13 @@ function handleClick1() {
     return
   }
   g_obj.value.count++
+}
+
+// 直接修改 state, 使用 $patch。 这样可以方便的在同一次渲染中修改多个值
+function handleClickPatch() {
+  store.$patch({
+    g_count: store.g_count + 3
+  })
 }
 </script>
 

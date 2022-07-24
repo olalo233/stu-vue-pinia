@@ -25,3 +25,5 @@ npm install pinia
 ### 响应式取值
 
 ### 响应式解构 store 对值的操作
+
+### 使用 $patch 修改store
