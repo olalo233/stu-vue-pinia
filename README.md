@@ -37,3 +37,5 @@ npm install pinia
 ### 监听状态变化
 
 ### 计算属性
+
+### 使用 store action 中定义的函数  

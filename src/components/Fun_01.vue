@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>当前时间： {{ new Date(store.time).toLocaleString() }}</h1>
     <!-- 使用定义的数据仓库取值 -->
     <h1>store count : {{ store.g_count }}</h1>
     <!--  修改store中的值，这样是响应式的，修改了值上面的h1中也会同步修改。  -->
@@ -11,6 +12,7 @@
     <button @click="handleClickPatch1"> patch count +10</button>
     <button @click="handleState">替换state</button>
     <button @click="resetState">重置store</button>
+    <button @click="store.getTime">更新时间</button>
     <h1> 两个count的和: {{ store.sumCount }} | {{ sumCount }} </h1>
   </div>
 </template>
