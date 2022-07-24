@@ -33,3 +33,5 @@ npm install pinia
 ### 替换 store 中的 state
 
 ### 重置 store
+
+### 监听状态变化

@@ -69,6 +69,34 @@ function handleState() {
 function resetState() {
   store.$reset()
 }
+
+// 监听
+store.$subscribe((mutation, state) => {
+  function printEvents(event) {
+    console.log(
+        event.oldValue,
+        event.newValue,
+        // 变化的对象中的键
+        event.key,
+        // 变化的对象
+        event.target,
+        // 从对象中用键取到的是旧值
+        event.target[event.key]
+    )
+  }
+
+  // mutation 中 多个会是数组
+  if (Array.isArray(mutation.events)) {
+    for (const event of mutation.events) {
+      printEvents(event)
+    }
+  } else {
+    const event = mutation.events
+    printEvents(event)
+  }
+  console.log('mutation： ', mutation)
+  console.log('state: ', state)
+})
 </script>
 
 <style scoped>
